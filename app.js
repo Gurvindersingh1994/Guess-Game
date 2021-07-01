@@ -1,28 +1,43 @@
-//press on secret number button, and generate a number when pressed.
-// store the number generated in the button itself and change the text to number is generated or may be give a alert message
-// press "enter your number button " to enter the number
-// match the number
-// if match then hurraaah, if not,prompt the messege that number do not match, enter again.
-
-
 // Selectors
+const headingClass= document.querySelector('.heading'
+);
 const secretNumberBtn = document.querySelector('.secret-btn'
 );
-
+const  enterUserValueBtn = document.querySelector('.userNumber-btn'
+);
 //Events
 secretNumberBtn.addEventListener('click', randomNumber);
+enterUserValueBtn.addEventListener('click', userValue);
+
+let userInput;
 
 //Functions
-function hide() {
-    secretNumberBtn.innerHTML= '<h1> Number is selected </h1>';
-    secretNumberBtn.classList.add('secret-btn-styling2');
+// Function to get user value
+function userValue()
+{
+    userInput = prompt('Enter the number between 1-100');
+    var regex=/^[0-9]+$/;
+    if(userInput.match(regex) && userInput <=100)
+    {
+        enterUserValueBtn.innerHTML= `<h2>number selected is  ${userInput} </h2>`;
     }
+    else{
+        enterUserValueBtn.innerHTML= `<h2> Number is not valid. Enter again </h2>`;
 
+    }    
+}
 
 //Random number generator function
-
 function randomNumber() {
-    let randomNum = Math.random()*100;
+    let randomNum = Math.random()*11;
     let fixedNum = Math.floor(randomNum);
-    console.log(fixedNum);
+    secretNumberBtn.innerHTML= `<h2>Secret number is ${fixedNum}</h2>` ;
+
+    if(fixedNum === userInput)
+    {
+        console.log('Number Match. Hurrah!!');
+    }
+    else{
+        console.log(`Number doesn't Match. Try again`);
+    }
 }

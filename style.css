@@ -6,28 +6,32 @@
 }
 
 .container {
-  display: flex;
-  justify-content: center;
+  display: relative;
   height: 100vh;
   background-color: navajowhite;
 }
 
 .heading {
   position: absolute;
-  top: 100px;
+  top: 200px;
+  left: 800px;
   color: maroon;
 }
 
 h1 {
+  font-size: 3em;
+}
+h2 {
   font-size: 2em;
 }
 .secret-btn {
   padding: 10px 10px;
-  margin: 20px 0 0 40px;
+  margin: 20px 0 0 0px;
   color: maroon;
-  background-color: rosybrown;
-  border: none;
+  background-color: navajowhite;
   cursor: pointer;
+  border: none;
+  text-decoration: none;
 }
 .secret-btn:hover {
   transform: scale(1.1);
@@ -38,11 +42,12 @@ h1 {
 }
 .userNumber-btn {
   padding: 10px 10px;
-  margin: 150px 0 0 10px;
+  margin: 50px 0 0 0px;
   color: maroon;
-  background-color: rosybrown;
+  background-color: navajowhite;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .userNumber-btn:hover {
